@@ -2,7 +2,7 @@
 
 AI product recommendations for PrestaShop stores, with a free module and a cloud service that works from the first day of a new catalog.
 
-[Download the latest module](https://github.com/recokit/prestashop-module/releases/latest) · [Installation guide](https://recokit.fr/docs/prestashop-installation.md) · [RecoKit website](https://recokit.fr/prestashop.html)
+[Download the latest module](https://github.com/recokit/prestashop-module/releases/latest) · [Installation guide](https://recokit.fr/docs/prestashop-installation.md) · [PrestaShop article (FR)](https://recokit.fr/blog/module-recommandation-produit-prestashop) · [PrestaShop article (EN)](https://recokit.fr/en/blog/prestashop-product-recommendation-module)
 
 ## What it adds to your store
 
