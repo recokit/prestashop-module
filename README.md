@@ -1,17 +1,28 @@
 # RecoKit for PrestaShop
 
-Free PrestaShop module for displaying RecoKit product recommendations: similar products, complementary products, bundles, comparison, cart recommendations and add-to-cart suggestions.
+AI product recommendations for PrestaShop stores, with a free module and a cloud service that works from the first day of a new catalog.
 
-The module connects the shop to the RecoKit SaaS API. Catalog analysis and recommendation processing run on RecoKit infrastructure; the module does not run an AI model on the merchant's server.
+[Download the latest module](https://github.com/recokit/prestashop-module/releases/latest) · [Installation guide](https://recokit.fr/docs/prestashop-installation.md) · [RecoKit website](https://recokit.fr/prestashop.html)
 
-## Install
+## What it adds to your store
 
-1. Download the ZIP from the [RecoKit PrestaShop page](https://recokit.fr/prestashop.html) (the public GitHub release can be used once this repository is published).
+- Similar products on product pages
+- Complementary products and cross-sell suggestions
+- Product bundles
+- Product comparison
+- Recommendations in the cart and add-to-cart modal
+- Add-to-cart actions directly from recommendation cards
+
+RecoKit combines catalog content, semantic analysis and store signals. The module itself stays lightweight: catalog analysis and recommendation processing run on RecoKit infrastructure, not on the merchant's server.
+
+## Install in a few minutes
+
+1. Download `recokit-prestashop-1.3.3.zip` from the [latest release](https://github.com/recokit/prestashop-module/releases/latest).
 2. In PrestaShop, open **Modules and Services → Install a module**.
 3. Upload the ZIP without extracting it, then open **Configure**.
 4. The RecoKit account is created or associated automatically after a successful connection.
 
-The initial synchronization is automatic. Product associations and AI recommendations are asynchronous: sales associations may take a few minutes, and AI enrichment can take longer for a large catalog.
+The initial synchronization is automatic. Sales associations may take a few minutes and AI recommendations can take longer for a large catalog. The manual synchronization button is intended for recovery after an interruption or catalog mismatch.
 
 ## Requirements
 
@@ -19,10 +30,16 @@ The initial synchronization is automatic. Product associations and AI recommenda
 - PHP 7.4 or newer
 - HTTPS-enabled shop
 
-## Privacy
+## Privacy and data isolation
 
-The module sends the catalog data required to provide recommendations to the RecoKit API over HTTPS. Store data is isolated by shop. Sales events are used for that shop's co-purchase recommendations and are not used to train a global model. The merchant remains responsible for consent and privacy notices for analytics cookies.
+The module sends the catalog data required to provide recommendations to the RecoKit API over HTTPS. Store data is isolated by shop. Sales lines are used for that shop's co-purchase recommendations and are not used to train a global model shared between merchants. Personal customer contact and payment details are not needed for recommendation processing.
+
+The merchant remains responsible for consent and privacy notices for analytics cookies.
 
 ## Support
 
-See the [installation guide](https://recokit.fr/docs/prestashop-installation.md) or open an issue with the PrestaShop version and module logs. Never include API keys in an issue.
+Read the [full installation guide](https://recokit.fr/docs/prestashop-installation.md), visit the [RecoKit PrestaShop page](https://recokit.fr/prestashop.html), or open an issue with the PrestaShop version and module logs. Never include API keys in an issue.
+
+## License
+
+The module is distributed free of charge. RecoKit cloud service plans and usage limits are described on [recokit.fr](https://recokit.fr/).
