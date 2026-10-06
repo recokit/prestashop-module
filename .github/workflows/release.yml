@@ -1,0 +1,22 @@
+name: Publish PrestaShop module
+on:
+  push:
+    tags:
+      - 'v*'
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and publish module archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit 1
+          archive="recokit-prestashop-${RELEASE_TAG#v}.zip"
+          test -f "$archive"
+          unzip -t "$archive"
+          gh release create "$RELEASE_TAG" "$archive" --verify-tag --title "RecoKit for PrestaShop ${RELEASE_TAG#v}" --notes-file CHANGELOG.md

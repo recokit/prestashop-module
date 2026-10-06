@@ -17,7 +17,7 @@ RecoKit combines catalog content, semantic analysis and store signals. The modul
 
 ## Install in a few minutes
 
-1. Download `recokit-prestashop-1.3.3.zip` from the [latest release](https://github.com/recokit/prestashop-module/releases/latest).
+1. Download `recokit-prestashop-1.3.4.zip` from the [latest release](https://github.com/recokit/prestashop-module/releases/latest).
 2. In PrestaShop, open **Modules and Services → Install a module**.
 3. Upload the ZIP without extracting it, then open **Configure**.
 4. The RecoKit account is created or associated automatically after a successful connection.
