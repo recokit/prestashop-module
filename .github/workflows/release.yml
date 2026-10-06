@@ -1,6 +1,10 @@
 name: Publish PrestaShop module
 on:
   push:
+    branches: [main]
+    paths:
+      - '.github/workflows/release.yml'
+      - 'recokit-prestashop-*.zip'
     tags:
       - 'v*'
 permissions:
@@ -13,10 +17,11 @@ jobs:
       - name: Verify and publish module archive
         env:
           GH_TOKEN: ${{ github.token }}
-          RELEASE_TAG: ${{ github.ref_name }}
+          RELEASE_TAG: ${{ github.ref_type == 'tag' && github.ref_name || 'v1.3.4' }}
         run: |
           [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit 1
           archive="recokit-prestashop-${RELEASE_TAG#v}.zip"
           test -f "$archive"
           unzip -t "$archive"
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then exit 0; fi
           gh release create "$RELEASE_TAG" "$archive" --verify-tag --title "RecoKit for PrestaShop ${RELEASE_TAG#v}" --notes-file CHANGELOG.md
